@@ -4,13 +4,13 @@ end
 
 tasks = [
   { name: "The First Task", description: "", completed_date: random_time },
-  { name: "Go to Brunch", description: "" },
-  { name: "Go to Lunch", description: "", completed_date: random_time },
+  { name: "Go to Brunch", description: "Eggs bennie yum yum" },
+  { name: "Go to Lunch", description: "Soup soup soup", completed_date: random_time },
   { name: "Go to Second Lunch", description: "" },
   { name: "Play Video Games", description: "", completed_date: random_time },
-  { name: "High Five Somebody You Don't Know", description: "", completed_date: random_time },
+  { name: "High Five Somebody You Don't Know", description: "Be nice to strangers", completed_date: random_time },
   { name: "Plant Flowers", description: "", completed_date: random_time },
-  { name: "Call Mom", description: "" },
+  { name: "Call Mom", description: "Wish her a happy birthday" },
   { name: "She worries, you know.", description: "" },
   { name: "Nap.", description: "", completed_date: random_time }
 ]
