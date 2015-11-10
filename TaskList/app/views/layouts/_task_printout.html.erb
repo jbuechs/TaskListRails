@@ -1,8 +1,8 @@
 <form method="post"
-  <!-- <% if @method == :delete %>
+  <% if @method == :delete %>
     action="/delete_confirmation"
   <% end %>
-> -->
+>
   <table class="table table-hover">
     <thead>
       <tr>
@@ -14,18 +14,23 @@
     </thead>
     <tbody>
       <% @tasks.each do |task| %>
+      <% completed = !task.completed_date.nil? %>
       <tr>
           <td class="text-center"><label>
           <input type="checkbox" name = "ids[]" value="<%= task.id %>"></label></td>
-        <td <% if !task.completed_date.nil? %>
+        <td <% if completed %>
           class="strikethru"
           <% end %>
           ><%= task.name %></td>
-        <td <% if !task[3].nil? %>
+        <td <% if completed %>
           class="strikethru"
           <% end %>
           ><%= task.description %></td>
-        <td><%= task.completed_date %></td>
+        <td>
+          <% if completed %>
+            <%= task.completed_date.strftime("%b %-d, %Y") %>
+          <% end %>
+        </td>
       </tr>
       <% end %>
     </tbody>
