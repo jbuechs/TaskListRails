@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get 'tasks/' => 'tasks#index'
+  get '/' => 'tasks#index'
+  get 'tasks/:id' => 'tasks#show'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
