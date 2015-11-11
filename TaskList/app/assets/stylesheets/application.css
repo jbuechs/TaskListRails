@@ -20,6 +20,7 @@
  .centered-block {
    margin: auto;
    margin-top: 50px;
+   margin-bottom: 50px;
    max-width: 800px;
    min-height: 400px;
    background: rgb(245, 245, 245);
@@ -69,18 +70,31 @@
  }
 
  .btn {
-   width: 175px;
    font-family: 'Josefin Sans', sans-serif;
    font-size: 1.5em;
-   /*background: white;*/
-   background: none;
-   color: #333;
    transition: all 0.5s ease-out;
-   /*border: 1px solid black;*/
  }
 
  .btn:hover {
+   transition: all 0.5s ease-out;
+ }
+
+ .nav-btn {
+   width: 175px;
+   background: none;
+   color: #333;
+ }
+
+ .nav-btn:hover {
    background: rgb(77, 77, 77);
    color: white;
-   transition: all 0.5s ease-out;
+ }
+
+ .info-btn {
+   background: none;
+   color: #333;
+ }
+
+ .info-btn:hover {
+   color: blue;
  }

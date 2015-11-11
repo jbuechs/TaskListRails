@@ -1,11 +1,8 @@
-<div class="row">
-  <h1 class="text-center">Task List</h1>
-</div>
   <%= render 'layouts/task_printout' %>
-  <div class="centered-btn">
-    <a class="btn btn-lg" role="button" href="new"><span class="glyphicon glyphicon-unchecked" aria-hidden="true"></span> New</a>
-    <button class="btn btn-lg" type="submit" name="submit" value="edit"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>  Edit</button>
-    <button class="btn btn-lg" type="submit" name="submit" value="complete"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span> Complete</button>
-    <button class="btn btn-lg" type="submit" name="submit" value="delete"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> Delete</button>
+  <div class="btn-group" role="group" aria-label="group of editing buttons">
+    <a class="btn btn-lg nav-btn" role="button" href="new"><span class="glyphicon glyphicon-unchecked" aria-hidden="true"></span> New</a>
+    <button class="btn btn-lg nav-btn" type="submit" name="submit" value="edit"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>  Edit</button>
+    <button class="btn btn-lg nav-btn" type="submit" name="submit" value="complete"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span> Complete</button>
+    <button class="btn btn-lg nav-btn" type="submit" name="submit" value="delete"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> Delete</button>
   </div>
 </form>

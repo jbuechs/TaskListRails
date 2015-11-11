@@ -1,10 +1,12 @@
 class TasksController < ApplicationController
   def index
+    @title = "Task List"
     @tasks = Task.all
   end
 
   def show
+    @title = "About This Task"
     id = params[:id]
-    @task = Task.find(id)
+    @tasks = Task.where(id: id)
   end
 end
