@@ -29,8 +29,11 @@
           <% end %>
         </td>
         <td>
-          <a href="/tasks/<%= task.id %>" class="btn info-btn btn-sm" type="button">
+          <a href="/tasks/<%= task.id %>" class="btn info-btn btn-sm" type="button" aria-label="Task Info Button">
             <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+          </a>
+          <a href="/tasks/<%= task.id %>" class="btn info-btn btn-sm" type="button" aria-label="Delete Task Button">
+            <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
           </a>
         </td>
       </tr>
