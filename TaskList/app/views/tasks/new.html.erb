@@ -1,0 +1,11 @@
+<%= form_for @task do |f| %>
+  <div class="form-group">
+    <fieldset>
+      <%= f.label :name %>:
+      <%= f.text_field :name, :class => "form-control" %><br />
+      <%= f.label :description %>:
+      <%= f.text_field :description, :class => "form-control" %><br />
+    </fieldset>
+  </div>
+  <%= f.submit 'Save Task', :class => 'btn btn-lg nav-btn' %>
+<% end %>
