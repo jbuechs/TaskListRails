@@ -16,8 +16,8 @@ class TasksController < ApplicationController
   end
 
   def create
-    Task.create(task_params[:post])
-    # redirect_to('/')
+    Task.create(task_params[:task])
+    redirect_to('/')
   end
 
   private
