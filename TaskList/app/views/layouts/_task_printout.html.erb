@@ -1,9 +1,4 @@
-<form method="post"
-  <% if @method == :delete %>
-    action="/delete_confirmation"
-  <% end %>
->
-  <table class="table table-hover">
+<table class="table table-hover">
     <thead>
       <tr>
         <td>Task</td>
@@ -18,7 +13,9 @@
         <td <% if completed %>
           class="strikethru"
           <% end %>
-          ><%= task.name %></td>
+          ><%= button_to "#", method: :delete, class: "btn info-btn btn-sm"  do %>
+            <span class="glyphicon glyphicon-minus-sign" aria-hidden="true" aria-label="Edit Button"></span>
+          <% end %><%= task.name %></td>
         <td <% if completed %>
           class="strikethru"
           <% end %>
@@ -32,9 +29,13 @@
           <a href="/tasks/<%= task.id %>" class="btn info-btn btn-sm" type="button" aria-label="Task Info Button">
             <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
           </a>
-          <a href="/tasks/<%= task.id %>" class="btn info-btn btn-sm" type="button" aria-label="Delete Task Button">
-            <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
-          </a>
+          <% button_path = "/tasks/#{task.id}" %>
+          <%= button_to button_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn info-btn btn-sm"  do %>
+            <span class="glyphicon glyphicon-remove-sign" aria-hidden="true" aria-label="Delete Button"></span>
+          <% end %>
+          <%= button_to button_path, method: :delete, class: "btn info-btn btn-sm"  do %>
+            <span class="glyphicon glyphicon-ok-sign" aria-hidden="true" aria-label="Complete Button"></span>
+          <% end %>
         </td>
       </tr>
       <% end %>
