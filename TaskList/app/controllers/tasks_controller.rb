@@ -32,9 +32,20 @@ class TasksController < ApplicationController
     # @task = Task.new()
   end
 
+  def update
+    id = params[:id]
+    @task = Task.find(id)
+    @task.update(update_params[:task])
+    redirect_to('/')
+  end
+
   private
   def task_params
     params.permit(task:[:name, :description])
+  end
+
+  def update_params
+    params.permit(task: [:name, :description])
   end
 
 end
