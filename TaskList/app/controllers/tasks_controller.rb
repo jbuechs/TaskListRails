@@ -1,4 +1,6 @@
 class TasksController < ApplicationController
+  before_action :get_task, only: [:show, :edit, :update, :toggle_completed]
+
   def index
     @title = "Task List"
     @tasks = Task.all
@@ -6,8 +8,7 @@ class TasksController < ApplicationController
 
   def show
     @title = "About This Task"
-    id = params[:id]
-    @tasks = Task.where(id: id)
+    @tasks = [@task]
   end
 
   def new
@@ -34,14 +35,10 @@ class TasksController < ApplicationController
   def edit
     @title = "Edit This Task"
     @method = :patch
-    id = params[:id]
-    @task = Task.find(id)
     @action_url = "/tasks/#{@task.id}"
   end
 
   def update
-    id = params[:id]
-    @task = Task.find(id)
     if @task.update(task_params[:task])
       redirect_to('/')
     else
@@ -53,8 +50,6 @@ class TasksController < ApplicationController
   end
 
   def toggle_completed
-    id = params[:id]
-    @task = Task.find(id)
     if @task.completed_date.nil?
       @task.update(completed_date: Time.now)
     else
@@ -66,6 +61,11 @@ class TasksController < ApplicationController
   private
   def task_params
     params.permit(task:[:name, :description, :completed_date])
+  end
+
+  def get_task
+    id = params[:id]
+    @task = Task.find(id)
   end
 
 end
