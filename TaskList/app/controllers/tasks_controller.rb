@@ -28,9 +28,8 @@ class TasksController < ApplicationController
   def edit
     @title = "Edit This Task"
     id = params[:id]
-    @tasks = Task.where(id: id)
-    @task = @tasks[0]
-
+    @task = Task.find(id)
+    # @task = Task.new()
   end
 
   private
