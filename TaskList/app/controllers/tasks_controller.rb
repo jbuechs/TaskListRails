@@ -45,6 +45,9 @@ class TasksController < ApplicationController
     if @task.update(task_params[:task])
       redirect_to('/')
     else
+      @title = "Edit This Task"
+      @method = :patch
+      @action_url = "/tasks/#{@task.id}"
       render 'edit'
     end
   end
