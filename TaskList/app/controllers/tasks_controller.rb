@@ -29,7 +29,8 @@ class TasksController < ApplicationController
     @title = "Edit This Task"
     id = params[:id]
     @tasks = Task.where(id: id)
-    
+    @task = @tasks[0]
+
   end
 
   private
