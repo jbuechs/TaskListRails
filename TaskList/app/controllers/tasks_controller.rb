@@ -43,6 +43,17 @@ class TasksController < ApplicationController
     redirect_to('/')
   end
 
+  def toggle_completed
+    id = params[:id]
+    @task = Task.find(id)
+    if @task.completed_date.nil?
+      @task.update(completed_date: Time.now)
+    else
+      @task.update(completed_date: nil)
+    end
+    redirect_to('/')
+  end
+
   private
   def task_params
     params.permit(task:[:name, :description, :completed_date])

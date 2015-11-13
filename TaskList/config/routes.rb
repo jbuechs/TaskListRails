@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   delete 'tasks/:id' => 'tasks#destroy'
   get 'tasks/:id/edit' => 'tasks#edit'
   patch 'tasks/:id' => 'tasks#update'
+  patch 'tasks/:id/completed' => 'tasks#toggle_completed'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
