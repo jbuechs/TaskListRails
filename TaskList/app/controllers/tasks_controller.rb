@@ -30,16 +30,14 @@ class TasksController < ApplicationController
   end
 
   def edit
-    @method = :patch
-    @action_url = "/tasks/#{@task.id}"
+    edit_vars
   end
 
   def update
     if @task.update(task_params[:task])
       redirect_to('/')
     else
-      @method = :patch
-      @action_url = "/tasks/#{@task.id}"
+      edit_vars
       render 'edit'
     end
   end
@@ -61,6 +59,11 @@ class TasksController < ApplicationController
   def get_task
     id = params[:id]
     @task = Task.find(id)
+  end
+
+  def edit_vars
+    @method = :patch
+    @action_url = "/tasks/#{@task.id}"
   end
 
 end

@@ -20,13 +20,9 @@
     <div class="container">
       <div class="centered-block">
         <div class="row">
-          <div class="col-10"><h1 class="text-center"><%= yield :title %></h1></div>
-          <div class="col-2">
-            <div class="btn-group" role="group" aria-label="group of editing buttons">
-              <a class="btn btn-lg nav-btn" role="button" href="tasks/new"><span class="glyphicon glyphicon-unchecked" aria-hidden="true"></span> New</a>
-            </div>
+          <div class="col-12">
+            <h1 class="text-center"><%= yield :title %></h1>
           </div>
-
         </div>
         <%= yield %>
       </div>
