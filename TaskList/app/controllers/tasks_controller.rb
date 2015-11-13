@@ -18,8 +18,12 @@ class TasksController < ApplicationController
   def create
     @action_url = "/tasks/"
     @method = :post
-    Task.create(task_params[:task])
-    redirect_to('/')
+    @task = Task.new(task_params[:task])
+    if @task.save
+      redirect_to('/')
+    else
+      render 'new'
+    end
   end
 
   def destroy
@@ -33,14 +37,16 @@ class TasksController < ApplicationController
     id = params[:id]
     @task = Task.find(id)
     @action_url = "/tasks/#{@task.id}"
-    # @task = Task.new()
   end
 
   def update
     id = params[:id]
     @task = Task.find(id)
-    @task.update(task_params[:task])
-    redirect_to('/')
+    if @task.update(task_params[:task])
+      redirect_to('/')
+    else
+      render 'edit'
+    end
   end
 
   def toggle_completed
