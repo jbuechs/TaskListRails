@@ -16,6 +16,8 @@ class TasksController < ApplicationController
   end
 
   def create
+    @action_url = "/tasks/"
+    @method = :post
     Task.create(task_params[:task])
     redirect_to('/')
   end
@@ -27,8 +29,10 @@ class TasksController < ApplicationController
 
   def edit
     @title = "Edit This Task"
+    @method = :patch
     id = params[:id]
     @task = Task.find(id)
+    @action_url = "/tasks/#{@task.id}"
     # @task = Task.new()
   end
 
