@@ -1,0 +1,14 @@
+<%= form_for @task do |f| %>
+  <div class="form-group">
+    <fieldset>
+      <%= f.label :name %>:
+      <%= f.text_field :name, :class => "form-control" %><br />
+      <%= f.label :description %>:
+      <%= f.text_field :description, :class => "form-control" %><br />
+    </fieldset>
+  </div>
+  <div class="btn-group" role="group" aria-label="group of editing buttons">
+    <button class="btn btn-lg nav-btn" type="submit" name="commit" value="Save Task"><span class="glyphicon glyphicon-thumbs-up"></span>  Submit</button>
+    <a class="btn btn-lg nav-btn" role="button" href="/"><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span> Cancel</a>
+  </div>
+<% end %>

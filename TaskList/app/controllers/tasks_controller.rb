@@ -25,6 +25,13 @@ class TasksController < ApplicationController
     redirect_to('/')
   end
 
+  def edit
+    @title = "Edit This Task"
+    id = params[:id]
+    @tasks = Task.where(id: id)
+    
+  end
+
   private
   def task_params
     params.permit(task:[:name, :description])
