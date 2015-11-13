@@ -2,17 +2,14 @@ class TasksController < ApplicationController
   before_action :get_task, only: [:show, :edit, :update, :toggle_completed]
 
   def index
-    @title = "Task List"
     @tasks = Task.all
   end
 
   def show
-    @title = "About This Task"
     @tasks = [@task]
   end
 
   def new
-    @title = "Add a Task"
     @task = Task.new()
   end
 
@@ -33,7 +30,6 @@ class TasksController < ApplicationController
   end
 
   def edit
-    @title = "Edit This Task"
     @method = :patch
     @action_url = "/tasks/#{@task.id}"
   end
@@ -42,7 +38,6 @@ class TasksController < ApplicationController
     if @task.update(task_params[:task])
       redirect_to('/')
     else
-      @title = "Edit This Task"
       @method = :patch
       @action_url = "/tasks/#{@task.id}"
       render 'edit'
