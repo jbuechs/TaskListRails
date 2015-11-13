@@ -45,11 +45,11 @@ class TasksController < ApplicationController
 
   private
   def task_params
-    params.permit(task:[:name, :description])
+    params.permit(task:[:name, :description, :completed_date])
   end
 
   def update_params
-    params.permit(task: [:name, :description])
+    params.permit(task: [:name, :description, :completed_date])
   end
 
 end
