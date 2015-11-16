@@ -4,6 +4,7 @@
       <td>Name</td>
       <td>Email address</td>
       <td># to do</td>
+      <td>total</td>
     </tr>
   </thead>
   <tbody>
@@ -12,6 +13,7 @@
         <td><%= link_to person.name, "/people/#{person.id}" %></td>
         <td><%= person.email %></td>
         <td><%= num_incomplete(person.id) %></td>
+        <td><%= link_to total_tasks(person.id), "/people/#{person.id}/tasks" %></td>
       </tr>
     <% end %>
   </tbody>

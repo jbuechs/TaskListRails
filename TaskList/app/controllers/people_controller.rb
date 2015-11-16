@@ -9,10 +9,6 @@ class PeopleController < ApplicationController
     @people = [@person]
   end
 
-  def new
-
-  end
-
   def show_tasks
     @tasks = @person.tasks
   end
