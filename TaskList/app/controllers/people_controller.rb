@@ -1,13 +1,11 @@
 class PeopleController < ApplicationController
-  # before_action :get_person, only: [:show]
+  before_action :get_person, only: [:show, :show_tasks]
 
   def index
     @people = Person.all
   end
 
   def show
-    id = params[:id]
-    @person = Person.find(id)
     @people = [@person]
   end
 
@@ -15,10 +13,14 @@ class PeopleController < ApplicationController
 
   end
 
-  # private
-  #   def get_person
-  #     id = params[:id]
-  #     @person = Person.find(id)
-  #   end
+  def show_tasks
+    @tasks = @person.tasks
+  end
+
+  private
+    def get_person
+      id = params[:id]
+      @person = Person.find(id)
+    end
 
 end
