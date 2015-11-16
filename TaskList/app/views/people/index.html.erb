@@ -9,13 +9,15 @@
     <tr>
       <td>Name</td>
       <td>Email address</td>
+      <td># to do</td>
     </tr>
   </thead>
   <tbody>
     <% @people.each do |person| %>
       <tr>
-        <td><%= person.name %></td>
-        <td><%= person.email %></td>        
+        <td><%= link_to person.name, "/person/#{person.id}" %></td>
+        <td><%= person.email %></td>
+        <td><%= num_incomplete(person.id) %></td>
       </tr>
     <% end %>
   </tbody>
