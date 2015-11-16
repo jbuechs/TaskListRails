@@ -14,7 +14,7 @@
         <td <% if completed %>
           class="strikethru"
           <% end %>
-          ><%= button_to "/tasks/#{task.id}/edit", method: :get, class: "btn info-btn btn-sm", title: "Edit Task" do %>
+          ><%= button_to "/tasks/#{task.id}/edit", method: :get, class: "btn info-btn btn-sm", title: "Edit Task", 'data-tooltip' => 'Edit Task' do %>
             <span class="glyphicon glyphicon-minus-sign" aria-hidden="true" aria-label="Edit Button"></span>
           <% end %> <%= task.name %></td>
         <td <% if completed %>
@@ -28,14 +28,14 @@
         </td>
         <td> <%= link_to task.person.name, "people/#{task.person_id}" %></td>
         <td>
-          <a href="/tasks/<%= task.id %>" class="btn info-btn btn-sm" type="button" aria-label="Task Info Button" title="Get Task Info">
+          <a href="/tasks/<%= task.id %>" class="btn info-btn btn-sm tooltip-left" type="button" aria-label="Task Info Button" data-tooltip="Get Task Info">
             <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
           </a>
           <% button_path = "/tasks/#{task.id}" %>
-          <%= button_to button_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn info-btn btn-sm", title: "Delete Task"  do %>
+          <%= button_to button_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn info-btn btn-sm", title: "Delete Task", 'data-tooltip' => 'Delete Task'  do %>
             <span class="glyphicon glyphicon-remove-sign" aria-hidden="true" aria-label="Delete Button"></span>
           <% end %>
-          <%= button_to "#{button_path}/completed", method: :patch, class: "btn info-btn btn-sm", title: "Toggle Completed" do %>
+          <%= button_to "#{button_path}/completed", method: :patch, class: "btn info-btn btn-sm tooltip-right", title: "Toggle Completed", 'data-tooltip' => 'Toggle Completed' do %>
             <span class="glyphicon glyphicon-ok-sign" aria-hidden="true" aria-label="Complete Button"></span>
           <% end %>
         </td>
