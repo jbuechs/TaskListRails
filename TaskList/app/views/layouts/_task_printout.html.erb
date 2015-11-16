@@ -26,7 +26,7 @@
             <%= task.completed_date.strftime("%b %-d, %Y") %>
           <% end %>
         </td>
-        <td> <%= task.person.name %></td>
+        <td> <%= link_to task.person.name, "people/#{task.person_id}" %></td>
         <td>
           <a href="/tasks/<%= task.id %>" class="btn info-btn btn-sm" type="button" aria-label="Task Info Button" title="Get Task Info">
             <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
