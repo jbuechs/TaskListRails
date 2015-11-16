@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   patch 'tasks/:id' => 'tasks#update'
   patch 'tasks/:id/completed' => 'tasks#toggle_completed'
 
+  get 'people/' => 'people#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
