@@ -1,0 +1,7 @@
+<% provide :title, "About #{@person.name}" %>
+
+<%= render 'layouts/person_printout' %>
+
+<div class="btn-group" role="group" aria-label="group of editing buttons">
+  <%= link_to "Show All People", people_path, class: "btn btn-lg nav-btn" %>
+</div>
