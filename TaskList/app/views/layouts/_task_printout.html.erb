@@ -4,6 +4,7 @@
         <td>Task</td>
         <td>Description</td>
         <td>Completed</td>
+        <td>Name</td>
       </tr>
     </thead>
     <tbody>
@@ -25,6 +26,7 @@
             <%= task.completed_date.strftime("%b %-d, %Y") %>
           <% end %>
         </td>
+        <td> <%= task.person.name %></td>
         <td>
           <a href="/tasks/<%= task.id %>" class="btn info-btn btn-sm" type="button" aria-label="Task Info Button" title="Get Task Info">
             <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
